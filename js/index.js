@@ -1,10 +1,12 @@
-// call function demo
+//apply function demo
 
 let stud1 = {name:"juan dela cruz"};
 let stud2 = {name:"pedro cruz"};
 
-let study = function(subject){
-    console.log(`${this.name} is enrolled in ${subject}`);
-}
+details = ["ICS2609", "2ITF"]
 
-study.call(stud2, "Science");
+let study = function(subject, section){
+    console.log(`${this.name} is enrolled in ${subject}, section ${section}`);
+};
+
+study.apply(stud2, details)
