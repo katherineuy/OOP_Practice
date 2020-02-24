@@ -1,13 +1,17 @@
-//bind function demo 
+//static
 
-let stud1 = {name:"juan dela cruz"};
-let stud2 = {name:"pedro cruz"};
+class School{
+    constructor(name, population, location){
+        this.name = name;
+        this.population = population;
+        this.location = location;
+    }
 
-details = ["ICS2609", "2ITF"]
+    static offer(course){ // belongs to the class
+        console.log(`${this.name} located in ${this.location} has a population of ${this.population}`
+        );
+    }
+}
 
-let study = function(subject, section){
-    console.log(`${this.name} is enrolled in ${subject}, section ${section}`);
-};
-
-let s = study.bind(stud2);
-s("Biology", "2ITF");
+let ust = new School("UST", 40156, "Manila");
+School.offer("Information Technology");
