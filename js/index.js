@@ -1,34 +1,29 @@
-//encapsulation
-class School{
-    setName(name){
+//inheritance
+
+class Person{
+    constructor(name, age){
         this.name = name;
+        this.age = age;
+    }
+    speak(language){
+        console.log(`${this.name} can speak ${language}`);
     }
 
-    getName(){
-        return this.name;
+class Employee extends Person{
+    constructor(name, age, job){
+        super(name, age);
+        this.job = job;
     }
 
-    setLocation(location){
-        this.location = location;
+    work(duration){
+        console.log(`${this.name} works ${duration} hours a day....`);
     }
 
-    getLocation(){
-        return this.location;
-    }
-
-    setPopulation(population){
-        this.population = population;
-        this.location = location;
-    }
-
-    getPopulation(){
-        return this.population;
-    }
 }
 
-let ust = new School();
-ust.setName("UST");
-ust.setLocation("Manila");
-ust.setPopulation(490561);
+let p = new Person("juan dela cruz", 30);
+let e = new Employee("pedro cruz", 18, "Doctor");
 
-console.log(`${ust.getName()} ${ust.getLocation()} has a population of ${ust.getPopulation()}`);
+p.speak("British"); 
+e.speak("French");
+e.work(10);
